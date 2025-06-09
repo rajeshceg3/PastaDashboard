@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Spaghetti",
+        "type": "Long",
+        "description": "A long, thin, cylindrical pasta.",
+        "origin": "Sicily",
+        "translation": "Little strings",
+        "common_uses": "Often served with tomato sauces, meat, or vegetables.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Spaghetti"
+    },
+    {
+        "name": "Penne",
+        "type": "Short-cut",
+        "description": "Medium length tubes with ridges, cut diagonally at both ends.",
+        "origin": "Liguria",
+        "translation": "Pens (after a quill pen)",
+        "common_uses": "Good with chunky sauces, in salads, or baked dishes.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Penne"
+    },
+    {
+        "name": "Fettuccine",
+        "type": "Long",
+        "description": "Ribbon of pasta approximately 6.5 millimeters wide.",
+        "origin": "Rome",
+        "translation": "Little ribbons",
+        "common_uses": "Often paired with rich and creamy sauces like Alfredo.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Fettuccine"
+    },
+    {
+        "name": "Farfalle",
+        "type": "Short-cut",
+        "description": "Bow tie- or butterfly-shaped pasta.",
+        "origin": "Northern Italy",
+        "translation": "Butterflies",
+        "common_uses": "Versatile for various sauces, salads, and baked dishes.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Farfalle"
+    },
+    {
+        "name": "Lasagne",
+        "type": "Sheet",
+        "description": "Square or rectangle sheets of pasta.",
+        "origin": "Emilia-Romagna (disputed)",
+        "translation": "Cooking pot (possibly from Latin/Greek)",
+        "common_uses": "Layered with sauces and cheese in baked dishes.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Lasagne"
+    },
+    {
+        "name": "Ravioli",
+        "type": "Filled",
+        "description": "Square or circular pockets of pasta, filled with cheese, meat, or vegetables.",
+        "origin": "Italy (general)",
+        "translation": "Possibly from 'to wrap' or 'turnip'",
+        "common_uses": "Served with light butter or oil sauces, or in broth.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Ravioli"
+    },
+    {
+        "name": "Bucatini",
+        "type": "Long",
+        "description": "Thick spaghetti-like pasta with a hole running through the center.",
+        "origin": "Lazio",
+        "translation": "Hollow straws",
+        "common_uses": "Excellent with rich, buttery sauces or Amatriciana.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Bucatini"
+    },
+    {
+        "name": "Rigatoni",
+        "type": "Short-cut",
+        "description": "Medium-Large tube with square-cut ends, always grooved.",
+        "origin": "Lazio",
+        "translation": "Lined ones",
+        "common_uses": "Perfect for capturing sauces in its ridges; good for baking.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Rigatoni"
+    },
+    {
+        "name": "Orecchiette",
+        "type": "Stretched",
+        "description": "Irregular disc with a central dome and a slightly thicker crown.",
+        "origin": "Apulia",
+        "translation": "Little ears",
+        "common_uses": "Typically served with broccoli rabe or chunky vegetable sauces.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Orecchiette"
+    },
+    {
+        "name": "Cannelloni",
+        "type": "Filled",
+        "description": "Rolls of pasta with various fillings, usually cooked in an oven.",
+        "origin": "Central Italy",
+        "translation": "Large reeds",
+        "common_uses": "Stuffed with ricotta, spinach, or meat, and baked with sauce.",
+        "image_url": "https://via.placeholder.com/300x200.png?text=Cannelloni"
+    }
+]
