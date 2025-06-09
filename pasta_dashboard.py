@@ -1,98 +1,14 @@
 import streamlit as st
+import json
 
 # 1. Define Data
-pasta_data = [
-    {
-        "name": "Spaghetti",
-        "type": "Long",
-        "description": "A long, thin, cylindrical pasta.",
-        "origin": "Sicily",
-        "translation": "Little strings",
-        "common_uses": "Often served with tomato sauces, meat, or vegetables."
-    },
-    {
-        "name": "Penne",
-        "type": "Short-cut",
-        "description": "Medium length tubes with ridges, cut diagonally at both ends.",
-        "origin": "Liguria",
-        "translation": "Pens (after a quill pen)",
-        "common_uses": "Good with chunky sauces, in salads, or baked dishes."
-    },
-    {
-        "name": "Fettuccine",
-        "type": "Long",
-        "description": "Ribbon of pasta approximately 6.5 millimeters wide.",
-        "origin": "Rome",
-        "translation": "Little ribbons",
-        "common_uses": "Often paired with rich and creamy sauces like Alfredo."
-    },
-    {
-        "name": "Farfalle",
-        "type": "Short-cut",
-        "description": "Bow tie- or butterfly-shaped pasta.",
-        "origin": "Northern Italy",
-        "translation": "Butterflies",
-        "common_uses": "Versatile for various sauces, salads, and baked dishes."
-    },
-    {
-        "name": "Lasagne",
-        "type": "Sheet",
-        "description": "Square or rectangle sheets of pasta.",
-        "origin": "Emilia-Romagna (disputed)",
-        "translation": "Cooking pot (possibly from Latin/Greek)",
-        "common_uses": "Layered with sauces and cheese in baked dishes."
-    },
-    {
-        "name": "Ravioli",
-        "type": "Filled",
-        "description": "Square or circular pockets of pasta, filled with cheese, meat, or vegetables.",
-        "origin": "Italy (general)",
-        "translation": "Possibly from 'to wrap' or 'turnip'",
-        "common_uses": "Served with light butter or oil sauces, or in broth."
-    },
-    {
-        "name": "Bucatini",
-        "type": "Long",
-        "description": "Thick spaghetti-like pasta with a hole running through the center.",
-        "origin": "Lazio",
-        "translation": "Hollow straws",
-        "common_uses": "Excellent with rich, buttery sauces or Amatriciana."
-    },
-    {
-        "name": "Rigatoni",
-        "type": "Short-cut",
-        "description": "Medium-Large tube with square-cut ends, always grooved.",
-        "origin": "Lazio",
-        "translation": "Lined ones",
-        "common_uses": "Perfect for capturing sauces in its ridges; good for baking."
-    },
-    {
-        "name": "Orecchiette",
-        "type": "Stretched",
-        "description": "Irregular disc with a central dome and a slightly thicker crown.",
-        "origin": "Apulia",
-        "translation": "Little ears",
-        "common_uses": "Typically served with broccoli rabe or chunky vegetable sauces."
-    },
-    {
-        "name": "Cannelloni",
-        "type": "Filled",
-        "description": "Rolls of pasta with various fillings, usually cooked in an oven.",
-        "origin": "Central Italy",
-        "translation": "Large reeds",
-        "common_uses": "Stuffed with ricotta, spinach, or meat, and baked with sauce."
-    }
-]
+# Load pasta data from JSON file
+with open("pasta_data.json", "r") as f:
+    pasta_data = json.load(f)
 
-nutritional_info_notes = [
-    "Nutritional values can vary based on ingredients (e.g., whole wheat vs. refined flour, egg content) and portion size.",
-    "A typical serving of cooked pasta (about 1 cup, or 140g) can range from 180-220 calories for plain pasta.",
-    "Generally, pasta is a good source of carbohydrates, providing energy. It also contains some protein and fiber.",
-    "Whole wheat pasta offers more fiber (typically 5-7g per serving vs 2-3g for refined) which aids digestion and can help manage blood sugar levels.",
-    "Pasta itself is relatively low in fat and sodium; the overall nutritional profile of a pasta dish heavily depends on the sauce and accompaniments.",
-    "The Harvard School of Public Health recommends choosing whole grain pasta as part of a healthy diet.",
-    "Enriched pasta often contains added folic acid and iron."
-]
+# Load nutritional info from JSON file
+with open("nutritional_info.json", "r") as f:
+    nutritional_info_notes = json.load(f)
 
 # 2. Dashboard Layout & Theming
 st.set_page_config(
@@ -226,6 +142,8 @@ if filtered_pasta:
     for pasta in filtered_pasta:
         with cols[col_idx % 2]: # Cycle through columns
             st.subheader(pasta["name"])
+            if "image_url" in pasta and pasta["image_url"]:
+                st.image(pasta["image_url"], caption=f"Image of {pasta['name']}")
             st.markdown(f"**Type:** `{pasta['type']}`") # Using backticks for type
             st.markdown(f"**Description:** {pasta['description']}")
             st.markdown(f"**Origin:** {pasta['origin']}")
