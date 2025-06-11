@@ -6,7 +6,7 @@
         "origin": "Sicily",
         "translation": "Little strings",
         "common_uses": "Often served with tomato sauces, meat, or vegetables.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Spaghetti"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Spaghettoni.jpg/800px-Spaghettoni.jpg"
     },
     {
         "name": "Penne",
@@ -15,7 +15,7 @@
         "origin": "Liguria",
         "translation": "Pens (after a quill pen)",
         "common_uses": "Good with chunky sauces, in salads, or baked dishes.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Penne"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Penne_rigate_primo_piano.jpg/800px-Penne_rigate_primo_piano.jpg"
     },
     {
         "name": "Fettuccine",
@@ -24,7 +24,7 @@
         "origin": "Rome",
         "translation": "Little ribbons",
         "common_uses": "Often paired with rich and creamy sauces like Alfredo.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Fettuccine"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Fettuccine_bianche_e_verdi.jpg/800px-Fettuccine_bianche_e_verdi.jpg"
     },
     {
         "name": "Farfalle",
@@ -33,7 +33,7 @@
         "origin": "Northern Italy",
         "translation": "Butterflies",
         "common_uses": "Versatile for various sauces, salads, and baked dishes.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Farfalle"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Farfalle_Blue_Kitchen.jpg/800px-Farfalle_Blue_Kitchen.jpg"
     },
     {
         "name": "Lasagne",
@@ -42,7 +42,7 @@
         "origin": "Emilia-Romagna (disputed)",
         "translation": "Cooking pot (possibly from Latin/Greek)",
         "common_uses": "Layered with sauces and cheese in baked dishes.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Lasagne"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Lasagne_-_stonesoup.jpg/800px-Lasagne_-_stonesoup.jpg"
     },
     {
         "name": "Ravioli",
@@ -51,7 +51,7 @@
         "origin": "Italy (general)",
         "translation": "Possibly from 'to wrap' or 'turnip'",
         "common_uses": "Served with light butter or oil sauces, or in broth.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Ravioli"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Ravioli_di_ricotta_e_spinaci_al_burro_e_salvia_2.jpg/800px-Ravioli_di_ricotta_e_spinaci_al_burro_e_salvia_2.jpg"
     },
     {
         "name": "Bucatini",
@@ -60,7 +60,7 @@
         "origin": "Lazio",
         "translation": "Hollow straws",
         "common_uses": "Excellent with rich, buttery sauces or Amatriciana.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Bucatini"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Bucatini_amatriciana.jpg/800px-Bucatini_amatriciana.jpg"
     },
     {
         "name": "Rigatoni",
@@ -69,7 +69,7 @@
         "origin": "Lazio",
         "translation": "Lined ones",
         "common_uses": "Perfect for capturing sauces in its ridges; good for baking.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Rigatoni"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Rigatoni_con_panna_e_salsiccia.jpg/800px-Rigatoni_con_panna_e_salsiccia.jpg"
     },
     {
         "name": "Orecchiette",
@@ -78,7 +78,7 @@
         "origin": "Apulia",
         "translation": "Little ears",
         "common_uses": "Typically served with broccoli rabe or chunky vegetable sauces.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Orecchiette"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Orecchiette_con_le_cime_di_rapa.jpg/800px-Orecchiette_con_le_cime_di_rapa.jpg"
     },
     {
         "name": "Cannelloni",
@@ -87,6 +87,6 @@
         "origin": "Central Italy",
         "translation": "Large reeds",
         "common_uses": "Stuffed with ricotta, spinach, or meat, and baked with sauce.",
-        "image_url": "https://via.placeholder.com/300x200.png?text=Cannelloni"
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cannelloni_baked_with_spinach_and_ricotta.jpg/800px-Cannelloni_baked_with_spinach_and_ricotta.jpg"
     }
 ]
