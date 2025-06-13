@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import pandas as pd
 
 # 1. Define Data
 # Load pasta data from JSON file
@@ -189,6 +190,28 @@ if filtered_pasta:
 
 else:
     st.warning("No pasta found for the selected type. Try another filter!")
+
+# New Section: Pasta Origins Map
+st.header("Pasta Origins Map")
+map_data_list = []
+for pasta in pasta_data:
+    if "latitude" in pasta and "longitude" in pasta:
+        map_data_list.append({
+            "latitude": pasta["latitude"],
+            "longitude": pasta["longitude"],
+            "name": pasta["name"] # Include name for potential future use or if map supports tooltips
+        })
+
+if map_data_list:
+    map_df = pd.DataFrame(map_data_list)
+    # Ensure column names are 'lat' or 'latitude', 'lon' or 'longitude'
+    # Streamlit's st.map expects columns named 'latitude'/'lat' and 'longitude'/'lon'.
+    # Our current 'latitude' and 'longitude' are fine.
+    st.map(map_df)
+else:
+    st.write("No location data available to display on the map.")
+
+st.divider() # Add a visual separator
 
 # 4. Display Nutritional Information
 st.header("General Nutritional Insights")
