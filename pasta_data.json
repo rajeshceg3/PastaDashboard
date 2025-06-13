@@ -4,6 +4,8 @@
         "type": "Long",
         "description": "A long, thin, cylindrical pasta.",
         "origin": "Sicily",
+        "latitude": 38.1157,
+        "longitude": 13.3615,
         "translation": "Little strings",
         "common_uses": "Often served with tomato sauces, meat, or vegetables.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Spaghettoni.jpg/800px-Spaghettoni.jpg"
@@ -13,6 +15,8 @@
         "type": "Short-cut",
         "description": "Medium length tubes with ridges, cut diagonally at both ends.",
         "origin": "Liguria",
+        "latitude": 44.4056,
+        "longitude": 8.9463,
         "translation": "Pens (after a quill pen)",
         "common_uses": "Good with chunky sauces, in salads, or baked dishes.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Penne_rigate_primo_piano.jpg/800px-Penne_rigate_primo_piano.jpg"
@@ -22,6 +26,8 @@
         "type": "Long",
         "description": "Ribbon of pasta approximately 6.5 millimeters wide.",
         "origin": "Rome",
+        "latitude": 41.9028,
+        "longitude": 12.4964,
         "translation": "Little ribbons",
         "common_uses": "Often paired with rich and creamy sauces like Alfredo.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Fettuccine_bianche_e_verdi.jpg/800px-Fettuccine_bianche_e_verdi.jpg"
@@ -31,6 +37,8 @@
         "type": "Short-cut",
         "description": "Bow tie- or butterfly-shaped pasta.",
         "origin": "Northern Italy",
+        "latitude": 45.4642,
+        "longitude": 9.1900,
         "translation": "Butterflies",
         "common_uses": "Versatile for various sauces, salads, and baked dishes.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Farfalle_Blue_Kitchen.jpg/800px-Farfalle_Blue_Kitchen.jpg"
@@ -40,6 +48,8 @@
         "type": "Sheet",
         "description": "Square or rectangle sheets of pasta.",
         "origin": "Emilia-Romagna (disputed)",
+        "latitude": 44.4949,
+        "longitude": 11.3426,
         "translation": "Cooking pot (possibly from Latin/Greek)",
         "common_uses": "Layered with sauces and cheese in baked dishes.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Lasagne_-_stonesoup.jpg/800px-Lasagne_-_stonesoup.jpg"
@@ -49,6 +59,8 @@
         "type": "Filled",
         "description": "Square or circular pockets of pasta, filled with cheese, meat, or vegetables.",
         "origin": "Italy (general)",
+        "latitude": 41.9028,
+        "longitude": 12.4964,
         "translation": "Possibly from 'to wrap' or 'turnip'",
         "common_uses": "Served with light butter or oil sauces, or in broth.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Ravioli_di_ricotta_e_spinaci_al_burro_e_salvia_2.jpg/800px-Ravioli_di_ricotta_e_spinaci_al_burro_e_salvia_2.jpg"
@@ -58,6 +70,8 @@
         "type": "Long",
         "description": "Thick spaghetti-like pasta with a hole running through the center.",
         "origin": "Lazio",
+        "latitude": 41.9028,
+        "longitude": 12.4964,
         "translation": "Hollow straws",
         "common_uses": "Excellent with rich, buttery sauces or Amatriciana.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Bucatini_amatriciana.jpg/800px-Bucatini_amatriciana.jpg"
@@ -67,6 +81,8 @@
         "type": "Short-cut",
         "description": "Medium-Large tube with square-cut ends, always grooved.",
         "origin": "Lazio",
+        "latitude": 41.9028,
+        "longitude": 12.4964,
         "translation": "Lined ones",
         "common_uses": "Perfect for capturing sauces in its ridges; good for baking.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Rigatoni_con_panna_e_salsiccia.jpg/800px-Rigatoni_con_panna_e_salsiccia.jpg"
@@ -76,6 +92,8 @@
         "type": "Stretched",
         "description": "Irregular disc with a central dome and a slightly thicker crown.",
         "origin": "Apulia",
+        "latitude": 41.1171,
+        "longitude": 16.8719,
         "translation": "Little ears",
         "common_uses": "Typically served with broccoli rabe or chunky vegetable sauces.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Orecchiette_con_le_cime_di_rapa.jpg/800px-Orecchiette_con_le_cime_di_rapa.jpg"
@@ -85,6 +103,8 @@
         "type": "Filled",
         "description": "Rolls of pasta with various fillings, usually cooked in an oven.",
         "origin": "Central Italy",
+        "latitude": 43.7696,
+        "longitude": 11.2558,
         "translation": "Large reeds",
         "common_uses": "Stuffed with ricotta, spinach, or meat, and baked with sauce.",
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cannelloni_baked_with_spinach_and_ricotta.jpg/800px-Cannelloni_baked_with_spinach_and_ricotta.jpg"
