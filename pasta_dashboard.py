@@ -4,12 +4,20 @@ import pandas as pd
 
 # 1. Define Data
 # Load pasta data from JSON file
-with open("pasta_data.json", "r") as f:
-    pasta_data = json.load(f)
+try:
+    with open("pasta_data.json", "r") as f:
+        pasta_data = json.load(f)
+except FileNotFoundError:
+    st.error("Critical error: `pasta_data.json` not found. The application cannot start without this file.")
+    st.stop()
 
 # Load nutritional info from JSON file
-with open("nutritional_info.json", "r") as f:
-    nutritional_info_notes = json.load(f)
+try:
+    with open("nutritional_info.json", "r") as f:
+        nutritional_info_notes = json.load(f)
+except FileNotFoundError:
+    st.error("Warning: `nutritional_info.json` not found. Nutritional information will be unavailable.")
+    nutritional_info_notes = []
 
 # 2. Dashboard Layout & Theming
 st.set_page_config(
@@ -18,8 +26,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help', # Placeholder
-        'Report a bug': "https://www.extremelycoolapp.com/bug", # Placeholder
         'About': "# Pasta Paradise Dashboard\nYour go-to source for pasta info!"
     }
 )
@@ -37,7 +43,7 @@ st.markdown("""
     }
 
     /* Main Title */
-    .stTitle { /* Targets st.title() */
+    h1 { /* Targets st.title() */
         font-size: 2.5em;
         color: #2c3e50; /* Dark blue-gray */
         text-align: center;
@@ -129,12 +135,12 @@ Use the filter on the left to explore different pasta types.
 """)
 
 # Image - Updated Placeholder
-st.image("https://via.placeholder.com/800x200.png?text=Pasta+Showcase+Banner", caption="A delightful assortment of pasta")
+st.image("https://images.unsplash.com/photo-1598866594240-a71619160648?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", caption="A delightful assortment of pasta", alt="A vibrant collage of various pasta types")
 
 
 # 3. Display Pasta Information
 st.sidebar.header("Filter Pasta")
-pasta_types = ["All"] + sorted(list(set([p["type"] for p in pasta_data])))
+pasta_types = ["All"] + sorted(list(set([p.get("type") for p in pasta_data if p.get("type") is not None])))
 selected_type = st.sidebar.selectbox("Select Pasta Type", pasta_types, help="Choose a pasta category to display.")
 sort_option = st.sidebar.selectbox("Sort Pasta By", ["None", "Name (Ascending)", "Name (Descending)"], help="Choose how to sort the pasta items.")
 
@@ -172,9 +178,9 @@ if filtered_pasta:
             st.subheader(pasta.get("name", "N/A"))
             image_url = pasta.get("image_url")
             if image_url:
-                st.image(image_url, caption=f"Image of {pasta.get('name', 'N/A')}")
+                st.image(image_url, caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Image of {pasta.get('name', 'N/A')}")
             else:
-                st.image("https://via.placeholder.com/300x200.png?text=Pasta+Dish", caption=f"Image of {pasta.get('name', 'N/A')}")
+                st.image("https://via.placeholder.com/300x200.png?text=Pasta+Dish", caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Placeholder image for {pasta.get('name', 'N/A')}")
 
             st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
             st.markdown(f"**Description:** {pasta.get('description', 'N/A')}")
@@ -199,7 +205,7 @@ for pasta in pasta_data:
         map_data_list.append({
             "latitude": pasta["latitude"],
             "longitude": pasta["longitude"],
-            "name": pasta["name"] # Include name for potential future use or if map supports tooltips
+            "name": pasta.get("name", "Unnamed Pasta Location") # Include name for potential future use or if map supports tooltips
         })
 
 if map_data_list:
@@ -207,7 +213,7 @@ if map_data_list:
     # Ensure column names are 'lat' or 'latitude', 'lon' or 'longitude'
     # Streamlit's st.map expects columns named 'latitude'/'lat' and 'longitude'/'lon'.
     # Our current 'latitude' and 'longitude' are fine.
-    st.map(map_df)
+    st.map(map_df, key="pasta_origin_map")
 else:
     st.write("No location data available to display on the map.")
 
