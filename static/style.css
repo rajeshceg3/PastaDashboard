@@ -1,0 +1,100 @@
+/* General App Styling */
+    .stApp {
+        /* background-color: #f0f2f6; /* Light gray background for the app */
+    }
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #34495e; /* Wet Asphalt (dark gray) - Ensuring general text color */
+    }
+
+    /* Main Title */
+    h1 { /* Targets st.title() */
+        font-size: 2.5em;
+        color: #2c3e50; /* Dark blue-gray */
+        text-align: center;
+        padding-bottom: 20px;
+        font-weight: bold; /* Typography Adjustment */
+    }
+
+    /* Headers */
+    /* st.header() uses h2 internally by default */
+    h2 { /* Targets st.header() */
+        color: #E67E22; /* Carrot orange - Color Palette Implementation */
+        border-bottom: 2px solid #E67E22;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        font-weight: bold; /* Typography Adjustment */
+    }
+
+    /* Subheaders for pasta names */
+    /* st.subheader() uses h3 internally by default */
+    h3 { /* Targets st.subheader() */
+        color: #C0392B; /* Pomegranate - Color Palette Implementation */
+        font-size: 1.75em;
+        margin-top: 20px;
+        font-weight: 500; /* Typography Adjustment */
+    }
+
+    /* Sidebar Styling */
+    .css-1d391kg { /* Specific class for Streamlit sidebar content area */
+        padding: 15px;
+        /* background-color: #ffffff; */ /* Optional: if you want sidebar to have different bg */
+    }
+    .st-emotion-cache-10oheav { /* Class for sidebar header (st.sidebar.header) */
+         font-size: 1.5em;
+         color: #3498DB; /* Peter River blue - Color Palette Implementation */
+    }
+
+
+    /* Markdown text styling */
+    .stMarkdown p {
+        font-size: 1.05em;
+        color: #34495e; /* Wet Asphalt (dark gray) - Ensuring general text color */
+    }
+    .stMarkdown strong {
+        color: #2c3e50; /* Slightly darker for emphasis */
+    }
+    .stMarkdown em {
+        color: #555;
+    }
+    .stMarkdown ul {
+        padding-left: 20px;
+    }
+    .stMarkdown li {
+        margin-bottom: 5px;
+    }
+    .stMarkdown code {
+        background-color: #e8e8e8; /* Adjusted background */
+        padding: 3px 6px;
+        border-radius: 4px;
+        color: #d35400; /* Pumpkin - Adjusted color */
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Image styling */
+    .stImage img {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Divider */
+    .stDivider {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .pasta-card {
+        background-color: #F5F5DC; /* Beige - Card Enhancement */
+        border: 1px solid #d3c0a8; /* Darker beige border - Card Enhancement */
+        border-radius: 8px; /* Rounded corners */
+        padding: 15px; /* Internal spacing */
+        margin-bottom: 20px; /* Space between cards */
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Enhanced shadow - Card Enhancement */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition for hover - Card Enhancement */
+    }
+
+    .pasta-card:hover {
+        transform: scale(1.02); /* Hover effect - Card Enhancement */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.20); /* Hover effect - Card Enhancement */
+    }
