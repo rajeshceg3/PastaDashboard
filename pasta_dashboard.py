@@ -48,7 +48,7 @@ Use the filter on the left to explore different pasta types.
 """)
 
 # Image - Updated Placeholder
-st.image("https://images.unsplash.com/photo-1598866594240-a71619160648?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", caption="A delightful assortment of pasta", alt="A vibrant collage of various pasta types")
+st.image("static/pasta_collage.jpg", caption="A delightful assortment of pasta", alt="A vibrant collage of various pasta types")
 
 
 # 3. Display Pasta Information
@@ -125,7 +125,7 @@ if filtered_pasta:
             if image_url:
                 st.image(image_url, caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Image of {pasta.get('name', 'N/A')}")
             else:
-                st.image("https://images.unsplash.com/photo-1613634326309-7fe54ed25ffa?auto=format&fit=crop&w=300&q=80", caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Placeholder image for {pasta.get('name', 'N/A')}")
+                st.image("static/default_pasta.jpg", caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Placeholder image for {pasta.get('name', 'N/A')}")
 
             st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
             st.markdown(f"**Description:** {pasta.get('description', 'N/A')}")
