@@ -125,7 +125,7 @@ if filtered_pasta:
             if image_url:
                 st.image(image_url, caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Image of {pasta.get('name', 'N/A')}")
             else:
-                st.image("https://via.placeholder.com/300x200.png?text=Pasta+Dish", caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Placeholder image for {pasta.get('name', 'N/A')}")
+                st.image("https://images.unsplash.com/photo-1613634326309-7fe54ed25ffa?auto=format&fit=crop&w=300&q=80", caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Placeholder image for {pasta.get('name', 'N/A')}")
 
             st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
             st.markdown(f"**Description:** {pasta.get('description', 'N/A')}")
