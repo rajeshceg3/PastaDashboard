@@ -21,6 +21,16 @@ except FileNotFoundError:
     st.error("Warning: `nutritional_info.json` not found. Nutritional information will be unavailable.")
     nutritional_info_notes = []
 
+# Define type-specific placeholders and default placeholder
+type_specific_placeholders = {
+    "Long": "https://images.unsplash.com/photo-1580992710955-068f7acc13f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG9uZyUyMHBhc3RhfGVufDB8fDB8fHww&auto=format&fit=crop&w=300&q=60",
+    "Short-cut": "https://images.unsplash.com/photo-1607290817009-09c99fd2692c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hvcnQlMjBwYXN0YXxlbnwwfHwwfHx8MA&auto=format&fit=crop&w=300&q=60",
+    "Sheet": "https://images.unsplash.com/photo-1587899509054-05157827f25e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFzYWduYSUyMHNoZWV0c3xlbnwwfHwwfHx8MA&auto=format&fit=crop&w=300&q=60",
+    "Filled": "https://images.unsplash.com/photo-1621996346565-e3263a22a02c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmF2aW9saXxlbnwwfHwwfHx8MA&auto=format&fit=crop&w=300&q=60",
+    "Stretched": "https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZyZXNoJTIwcGFzdGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=300&q=60"
+}
+default_placeholder_image = "https://images.unsplash.com/photo-1613634326309-7fe54ed25ffa?auto=format&fit=crop&w=300&q=80"
+
 # 2. Dashboard Layout & Theming
 st.set_page_config(
     page_title="Pasta Paradise Dashboard",
@@ -121,11 +131,20 @@ if filtered_pasta:
         with cols[col_idx % 2]: # Cycle through columns
             st.markdown('<div class="pasta-card">', unsafe_allow_html=True)
             st.subheader(pasta.get("name", "N/A"))
-            image_url = pasta.get("image_url")
-            if image_url:
-                st.image(image_url, caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Image of {pasta.get('name', 'N/A')}")
-            else:
-                st.image("https://images.unsplash.com/photo-1613634326309-7fe54ed25ffa?auto=format&fit=crop&w=300&q=80", caption=f"Image of {pasta.get('name', 'N/A')}", alt=f"Placeholder image for {pasta.get('name', 'N/A')}")
+
+            image_to_display = pasta.get("image_url") # Start with the specific image_url
+            pasta_type = pasta.get("type")
+            alt_text = f"Image of {pasta.get('name', 'N/A')}" # Default alt text
+
+            if not image_to_display: # If no specific image_url
+                if pasta_type and pasta_type in type_specific_placeholders:
+                    image_to_display = type_specific_placeholders[pasta_type]
+                    alt_text = f"Placeholder image for {pasta.get('type', 'N/A')} pasta: {pasta.get('name', 'N/A')}"
+                else:
+                    image_to_display = default_placeholder_image # Fallback to the generic default
+                    alt_text = f"Placeholder image for {pasta.get('name', 'N/A')}"
+
+            st.image(image_to_display, caption=f"Image of {pasta.get('name', 'N/A')}", alt=alt_text)
 
             st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
             st.markdown(f"**Description:** {pasta.get('description', 'N/A')}")
