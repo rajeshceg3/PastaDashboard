@@ -35,7 +35,7 @@ default_placeholder_image = "https://images.unsplash.com/photo-1613634326309-7fe
 st.set_page_config(
     page_title="Pasta Paradise Dashboard",
     page_icon="🍝",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="expanded",
     menu_items={
         'About': "# Pasta Paradise Dashboard\nYour go-to source for pasta info!"
@@ -79,18 +79,18 @@ if types_list:
     chart = alt.Chart(type_counts).mark_bar(
         cornerRadiusTopLeft=3,
         cornerRadiusTopRight=3,
-        color='#E67E22' # Use the primary orange color
+        color='#ffdab9' # Peach puff
     ).encode(
         x=alt.X('count:Q', title='Number of Pastas'),
         y=alt.Y('type:N', sort='-x', title='Pasta Type'), # Sort by count descending
         tooltip=['type:N', 'count:Q']
     ).properties(
-        title=alt.TitleParams(text=chart_title, anchor='middle', color='#2c3e50')
+        title=alt.TitleParams(text=chart_title, anchor='middle', color='#5a5a5a')
     ).configure_axis(
-        labelColor='#34495e',
-        titleColor='#34495e'
+        labelColor='#5a5a5a',
+        titleColor='#5a5a5a'
     ).configure_title(
-        color='#2c3e50'
+        color='#5a5a5a'
     )
 
     st.sidebar.markdown("---") # Add a separator
@@ -186,7 +186,7 @@ if map_data_list:
             data=map_df,
             get_position=["longitude", "latitude"],
             get_radius=10000,  # Radius in meters, adjust as needed
-            get_fill_color=[230, 126, 34, 180],  # Carrot orange, semi-transparent: [R, G, B, Alpha]
+            get_fill_color=[255, 182, 193, 180],  # Light pink, semi-transparent
             pickable=True  # Enable tooltips
         )
 
