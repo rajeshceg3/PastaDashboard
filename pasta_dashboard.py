@@ -58,7 +58,7 @@ Use the filter on the left to explore different pasta types.
 """)
 
 # Image - Updated Placeholder
-st.image("https://images.unsplash.com/photo-1598866594240-a71619160648?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", caption="A delightful assortment of pasta", alt="A vibrant collage of various pasta types")
+st.image("https://images.unsplash.com/photo-1598866594240-a71619160648?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", caption="A delightful assortment of pasta")
 
 
 # 3. Display Pasta Information
@@ -144,7 +144,7 @@ if filtered_pasta:
                     image_to_display = default_placeholder_image # Fallback to the generic default
                     alt_text = f"Placeholder image for {pasta.get('name', 'N/A')}"
 
-            st.image(image_to_display, caption=f"Image of {pasta.get('name', 'N/A')}", alt=alt_text)
+            st.image(image_to_display, caption=f"Image of {pasta.get('name', 'N/A')}")
 
             st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
             st.markdown(f"**Description:** {pasta.get('description', 'N/A')}")
