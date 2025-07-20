@@ -1,100 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 /* General App Styling */
-    .stApp {
-        /* background-color: #f0f2f6; /* Light gray background for the app */
-    }
-    body {
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        line-height: 1.6;
-        color: #34495e; /* Wet Asphalt (dark gray) - Ensuring general text color */
-    }
+.stApp {
+    background-image: url('https://images.unsplash.com/photo-1518675219903-c682c4215a7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 2rem;
+}
+body {
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #5a5a5a; /* Darker, softer gray for text */
+}
 
-    /* Main Title */
-    h1 { /* Targets st.title() */
-        font-size: 2.5em;
-        color: #2c3e50; /* Dark blue-gray */
-        text-align: center;
-        padding-bottom: 20px;
-        font-weight: bold; /* Typography Adjustment */
+/* Main Title */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    /* Headers */
-    /* st.header() uses h2 internally by default */
-    h2 { /* Targets st.header() */
-        color: #E67E22; /* Carrot orange - Color Palette Implementation */
-        border-bottom: 2px solid #E67E22;
-        padding-bottom: 10px;
-        margin-top: 30px;
-        font-weight: bold; /* Typography Adjustment */
-    }
+h1 {
+    font-size: 3em; /* Larger, more impactful title */
+    color: #ff8c69; /* Pastel salmon color */
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
+    animation: fadeInDown 1s ease-in-out;
+}
 
-    /* Subheaders for pasta names */
-    /* st.subheader() uses h3 internally by default */
-    h3 { /* Targets st.subheader() */
-        color: #C0392B; /* Pomegranate - Color Palette Implementation */
-        font-size: 1.75em;
-        margin-top: 20px;
-        font-weight: 500; /* Typography Adjustment */
+/* Headers */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    /* Sidebar Styling */
-    .css-1d391kg { /* Specific class for Streamlit sidebar content area */
-        padding: 15px;
-        /* background-color: #ffffff; */ /* Optional: if you want sidebar to have different bg */
-    }
-    .st-emotion-cache-10oheav { /* Class for sidebar header (st.sidebar.header) */
-         font-size: 1.5em;
-         color: #3498DB; /* Peter River blue - Color Palette Implementation */
-    }
+h2 {
+    color: #ffb6c1; /* Light pink */
+    border-bottom: 2px solid #ffb6c1;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-in-out;
+}
 
+/* Subheaders for pasta names */
+h3 {
+    color: #ffdab9; /* Peach puff */
+    font-size: 1.75em;
+    margin-top: 20px;
+    font-weight: 500;
+}
 
-    /* Markdown text styling */
-    .stMarkdown p {
-        font-size: 1.05em;
-        color: #34495e; /* Wet Asphalt (dark gray) - Ensuring general text color */
-    }
-    .stMarkdown strong {
-        color: #2c3e50; /* Slightly darker for emphasis */
-    }
-    .stMarkdown em {
-        color: #555;
-    }
-    .stMarkdown ul {
-        padding-left: 20px;
-    }
-    .stMarkdown li {
-        margin-bottom: 5px;
-    }
-    .stMarkdown code {
-        background-color: #e8e8e8; /* Adjusted background */
-        padding: 3px 6px;
-        border-radius: 4px;
-        color: #d35400; /* Pumpkin - Adjusted color */
-        font-family: 'Courier New', Courier, monospace;
-    }
+/* Sidebar Styling */
+.css-1d391kg {
+    padding: 15px;
+}
+.st-emotion-cache-10oheav {
+     font-size: 1.5em;
+     color: #add8e6; /* Light blue */
+}
 
-    /* Image styling */
-    .stImage img {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+/* Markdown text styling */
+.stMarkdown p {
+    font-size: 1.05em;
+    color: #5a5a5a;
+}
+.stMarkdown strong {
+    color: #4a4a4a;
+}
+.stMarkdown em {
+    color: #6a6a6a;
+}
+.stMarkdown ul {
+    padding-left: 20px;
+}
+.stMarkdown li {
+    margin-bottom: 5px;
+}
+.stMarkdown code {
+    background-color: #f0e68c; /* Khaki */
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #5a5a5a;
+    font-family: 'Courier New', Courier, monospace;
+}
 
-    /* Divider */
-    .stDivider {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
+/* Image styling */
+.stImage img {
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Softer, more pronounced shadow */
+}
 
-    .pasta-card {
-        background-color: #F5F5DC; /* Beige - Card Enhancement */
-        border: 1px solid #d3c0a8; /* Darker beige border - Card Enhancement */
-        border-radius: 8px; /* Rounded corners */
-        padding: 15px; /* Internal spacing */
-        margin-bottom: 20px; /* Space between cards */
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Enhanced shadow - Card Enhancement */
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition for hover - Card Enhancement */
-    }
+/* Divider */
+.stDivider {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 
-    .pasta-card:hover {
-        transform: scale(1.02); /* Hover effect - Card Enhancement */
-        box-shadow: 0 10px 20px rgba(0,0,0,0.20); /* Hover effect - Card Enhancement */
-    }
+.pasta-card {
+    background: linear-gradient(145deg, #fffaf0, #fdf5e6);
+    border: 1px solid #faf0e6; /* Linen */
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pasta-card img {
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pasta-card:hover {
+    transform: translateY(-5px) scale(1.03); /* More noticeable hover effect */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
