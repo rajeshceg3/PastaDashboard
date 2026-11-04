@@ -125,9 +125,10 @@ elif sort_option == "Name (Descending)":
 
 if filtered_pasta:
     # Using columns for a more structured layout, e.g., 2 columns
-    cols = st.columns(2)
     col_idx = 0
     for pasta in filtered_pasta:
+        if col_idx % 2 == 0:
+            cols = st.columns(2)
         with cols[col_idx % 2]: # Cycle through columns
             st.markdown('<div class="pasta-card">', unsafe_allow_html=True)
             st.subheader(pasta.get("name", "N/A"))
