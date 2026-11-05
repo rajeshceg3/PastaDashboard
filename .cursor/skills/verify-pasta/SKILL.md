@@ -1,6 +1,6 @@
 ---
 name: verify-pasta
-description: Run PastaDashboard's actual Streamlit browser journeys for filtering, sorting, search and nutrition while preserving external image/map failures as separate blockers.
+description: Run PastaDashboard's actual Streamlit browser journeys for filtering, sorting, search and nutrition with explicit media, map and content limits.
 ---
 # Verify Pasta Dashboard
 ## Surface and isolation
@@ -14,7 +14,7 @@ Checks actual heading,10entries, no Streamlit exception and no browser pageerror
 `node .cursor/skills/verify-pasta/helpers/drive.mjs drive --base http://127.0.0.1:8503/ --width 390 --out .verification-evidence/mobile`
 Repeat with --width 1365 and a separate evidence directory. Uses actual combobox options, typed search/Enter, sidebar close and expander clicks. Asserts Long membership, both exact sort orders, Ravioli match, no-results message, clear restoration and nutrition expansion. Streamlit rerenders controls, so resolve fresh handles and wait for resulting state. No internal setters or AppTest-only UI claims.
 ## Evidence
-JSON and screenshots survive cleanup. Inspect actual pixels. JSON separately records each external image's loaded state and map canvas size; text-journey ok does not certify these media. Current candidate requires10loaded originalshapeSVGs plus localmapSVG, no documentoverflow. Beforefinalacceptance inspect all10artpieces and bothmapwidths. Oldremotephotos returned403 in checked environment; sourceJSONURLs retained but notloaded. No providerkeys. Nutrition facts and exact geographic origin claims are inherited content, not independently validated by this workflow.
+JSON and screenshots survive cleanup. Inspect actual pixels. JSON records loaded local image state, map marker/label counts, grouped key presence and caption bounds. Text-journey success alone does not certify image quality. Current candidate requires10loaded originalshapeSVGs plus localmapSVG, no documentoverflow. Beforefinalacceptance inspect all10artpieces and bothmapwidths. Oldremotephotos returned403 in checked environment; sourceJSONURLs retained but notloaded. No providerkeys. Nutrition facts and exact geographic origin claims are inherited content, not independently validated by this workflow.
 ## Cleanup
 Helper closes only its browser. Stop/reap the exact Streamlit PID you started, including failed iterations. Never kill by name/delete evidence. No account settings, deployment, paid provider or source data mutations.
 ## Helpers
