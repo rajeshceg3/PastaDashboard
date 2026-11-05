@@ -1,54 +1,27 @@
-# Pasta Paradise Dashboard
+# Pasta Paradise
 
-Welcome to the Pasta Paradise Dashboard! This application is designed to be your go-to source for discovering various types of pasta, learning about their origins, common uses, and getting general nutritional insights.
+A small Streamlit collection of ten pasta shapes. Browse by family, search names/descriptions, sort the collection, compare common uses in the cards and see representative places on a local map.
 
-## Features
+## Run
 
-*   **Pasta Showcase:** Browse a diverse list of pasta varieties.
-*   **Detailed Information:** For each pasta, find its type (long, short-cut, filled, etc.), description, origin, translation of its name, and common culinary uses.
-*   **Filter by Type:** Easily filter the pasta list by categories to quickly find what you're looking for.
-*   **Nutritional Insights:** Access general notes on the nutritional aspects of pasta.
-*   **(Planned)** Pasta Images: Visuals for each pasta type to make browsing even more delightful!
+Python3.10+ is the executed baseline. From the repository root:
 
-## Running the Application
+```sh
+python -m venv .venv
+.venv/bin/pip install -r .cursor/skills/verify-pasta/requirements.txt
+.venv/bin/streamlit run pasta_dashboard.py
+```
 
-To run the Pasta Paradise Dashboard locally, follow these steps:
+The app reads local JSON, original SVG shape studies and public-domain NaturalEarth geometry. No account, map token or remote photograph is needed for these views. See [asset sources](static/ASSET_SOURCES.md).
 
-1.  **Prerequisites:**
-    *   Ensure you have Python 3.7+ installed.
-    *   It's recommended to use a virtual environment.
+## What the collection means
 
-2.  **Installation:**
-    *   Clone this repository (if you haven't already).
-    *   Navigate to the project directory.
-    *   Install the required dependencies:
-        ```bash
-        pip install streamlit
-        ```
+The drawings are schematic shape studies, not photographs. Places and coordinates are inherited catalog associations, not verified birthplaces. Several entries share a representative Rome coordinate and are grouped under one numbered map marker with a name key and table. Culinary traditions can span regions.
 
-3.  **Launch the Dashboard:**
-    *   Run the following command in your terminal:
-        ```bash
-        streamlit run pasta_dashboard.py
-        ```
-    *   Streamlit will open the application in your default web browser.
+Nutrition is general guidance, not dietary advice. Numeric serving claims in the inherited source JSON have not been independently checked and are not shown as measured values. Original data and external photo URLs remain preserved for later review, but remote photos are no longer loaded by the catalog.
 
-## Future Ideas
+## Verification and remaining work
 
-This dashboard is just the beginning! Here are some ideas for future enhancements:
+Follow [.cursor/skills/verify-pasta/SKILL.md](.cursor/skills/verify-pasta/SKILL.md) for actual mobile/desktop browser filtering, sorting, search, no-match recovery, nutrition, local-media and numbered-map checks. Inspect pixels after changes.
 
-*   **Expanded Pasta Database:** Continuously add more pasta varieties from around the world.
-*   **Search Functionality:** Allow users to search for specific pasta by name or keywords.
-*   **Recipe Suggestions:** Link pasta types to simple and authentic recipe ideas.
-*   **Interactive Origin Map:** Visualize the origins of different pasta types on a map.
-*   **User Accounts/Favorites:** Allow users to save their favorite pastas or recipes.
-*   **More Detailed Nutritional Info:** Provide specific nutritional breakdowns per serving for common pasta types.
-*   **Theming/Customization:** Offer different visual themes for the dashboard.
-
-## Contributing
-
-Contributions are welcome! If you have suggestions for new features, data corrections, or code improvements, please feel free to open an issue or submit a pull request.
-
----
-
-Enjoy exploring the wonderful world of pasta! 🍝
+This is a catalog repair and design foundation, not a finished cooking guide or a claim of full design acceptance. Recipe links, stronger comparison and geography teaching, sourced origin/nutrition review, full keyboard/screen-reader testing, device testing and hosted acceptance remain unfinished. No accounts/favorites or persistent user storage are provided.
