@@ -1,8 +1,9 @@
 import streamlit as st
 import json
 import pandas as pd
-import pydeck as pdk
 import altair as alt
+import math
+import html
 
 # 1. Define Data
 # Load pasta data from JSON file
@@ -21,22 +22,12 @@ except FileNotFoundError:
     st.error("Warning: `nutritional_info.json` not found. Nutritional information will be unavailable.")
     nutritional_info_notes = []
 
-# Define type-specific placeholders and default placeholder
-type_specific_placeholders = {
-    "Long": "https://images.unsplash.com/photo-1580992710955-068f7acc13f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG9uZyUyMHBhc3RhfGVufDB8fDB8fHww&auto=format&fit=crop&w=300&q=60",
-    "Short-cut": "https://images.unsplash.com/photo-1607290817009-09c99fd2692c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hvcnQlMjBwYXN0YXxlbnwwfHwwfHx8MA&auto=format&fit=crop&w=300&q=60",
-    "Sheet": "https://images.unsplash.com/photo-1587899509054-05157827f25e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFzYWduYSUyMHNoZWV0c3xlbnwwfHwwfHx8MA&auto=format&fit=crop&w=300&q=60",
-    "Filled": "https://images.unsplash.com/photo-1621996346565-e3263a22a02c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmF2aW9saXxlbnwwfHwwfHx8MA&auto=format&fit=crop&w=300&q=60",
-    "Stretched": "https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZyZXNoJTIwcGFzdGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=300&q=60"
-}
-default_placeholder_image = "https://images.unsplash.com/photo-1613634326309-7fe54ed25ffa?auto=format&fit=crop&w=300&q=80"
-
 # 2. Dashboard Layout & Theming
 st.set_page_config(
     page_title="Pasta Paradise Dashboard",
     page_icon="🍝",
     layout="centered",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
     menu_items={
         'About': "# Pasta Paradise Dashboard\nYour go-to source for pasta info!"
     }
@@ -50,16 +41,9 @@ except FileNotFoundError:
     st.warning("static/style.css not found. Using default Streamlit styling.")
 
 
-st.title("Pasta Paradise: An Informative Dashboard")
-st.markdown("""
-Welcome to the **Pasta Paradise**! This dashboard provides a quick look at various types of pasta,
-their origins, and common uses. You can also find general nutritional insights about pasta.
-Use the filter on the left to explore different pasta types.
-""")
-
-# Image - Updated Placeholder
-st.image("https://images.unsplash.com/photo-1598866594240-a71619160648?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", caption="A delightful assortment of pasta")
-
+st.title("Pasta Paradise")
+st.markdown("Explore ten shapes, from long strands to filled parcels. Find a shape by name, compare its uses, then see the places associated with it.")
+st.caption("Original shape studies · a small pasta collection")
 
 # 3. Display Pasta Information
 st.sidebar.header("Filter Pasta")
@@ -75,11 +59,11 @@ if types_list:
     type_counts.columns = ['type', 'count']
 
     # Create the Altair chart
-    chart_title = "Pasta Types Distribution"
+    chart_title = "Shape families"
     chart = alt.Chart(type_counts).mark_bar(
         cornerRadiusTopLeft=3,
         cornerRadiusTopRight=3,
-        color='#ffdab9' # Peach puff
+        color='#9b6b39' # Warm ink
     ).encode(
         x=alt.X('count:Q', title='Number of Pastas'),
         y=alt.Y('type:N', sort='-x', title='Pasta Type'), # Sort by count descending
@@ -94,7 +78,7 @@ if types_list:
     )
 
     st.sidebar.markdown("---") # Add a separator
-    st.sidebar.altair_chart(chart, use_container_width=True)
+    st.sidebar.altair_chart(chart, width="stretch")
 else:
     st.sidebar.markdown("---")
     st.sidebar.info("Not enough type data to display distribution chart.")
@@ -130,29 +114,15 @@ if filtered_pasta:
         if col_idx % 2 == 0:
             cols = st.columns(2)
         with cols[col_idx % 2]: # Cycle through columns
-            st.markdown('<div class="pasta-card">', unsafe_allow_html=True)
-            st.subheader(pasta.get("name", "N/A"))
-
-            image_to_display = pasta.get("image_url") # Start with the specific image_url
-            pasta_type = pasta.get("type")
-            alt_text = f"Image of {pasta.get('name', 'N/A')}" # Default alt text
-
-            if not image_to_display: # If no specific image_url
-                if pasta_type and pasta_type in type_specific_placeholders:
-                    image_to_display = type_specific_placeholders[pasta_type]
-                    alt_text = f"Placeholder image for {pasta.get('type', 'N/A')} pasta: {pasta.get('name', 'N/A')}"
-                else:
-                    image_to_display = default_placeholder_image # Fallback to the generic default
-                    alt_text = f"Placeholder image for {pasta.get('name', 'N/A')}"
-
-            st.image(image_to_display, caption=f"Image of {pasta.get('name', 'N/A')}")
-
-            st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
-            st.markdown(f"**Description:** {pasta.get('description', 'N/A')}")
-            st.markdown(f"**Origin:** {pasta.get('origin', 'N/A')}")
-            st.markdown(f"**Translation:** _{pasta.get('translation', 'N/A')}_")
-            st.markdown(f"**Common Uses:** {pasta.get('common_uses', 'N/A')}")
-            st.markdown('</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                st.subheader(pasta.get("name", "N/A"))
+                st.image(f"static/specimens/{pasta['name'].lower()}.svg", width="stretch")
+                st.caption("Illustrated shape study")
+                st.markdown(f"**Type:** `{pasta.get('type', 'N/A')}`")
+                st.markdown(pasta.get('description', ''))
+                st.markdown(f"**Associated place:** {pasta.get('origin', 'N/A')}")
+                st.markdown(f"**Name meaning:** _{pasta.get('translation', 'N/A')}_")
+                st.markdown(f"**At the table:** {pasta.get('common_uses', 'N/A')}")
 
         # Divider logic (remains outside the card, but after the column content)
         if col_idx % 2 == 1 or col_idx == len(filtered_pasta) -1 :
@@ -162,74 +132,48 @@ if filtered_pasta:
 else:
     st.warning("No pasta found for the selected type. Try another filter!")
 
-# New Section: Pasta Origins Map
-st.header("Pasta Origins Map")
-map_data_list = []
-for pasta in pasta_data:
-    if "latitude" in pasta and "longitude" in pasta:
-        map_data_list.append({
-            "latitude": pasta["latitude"],
-            "longitude": pasta["longitude"],
-            "name": pasta.get("name", "Unnamed Pasta Location") # Include name for potential future use or if map supports tooltips
-        })
-
-if map_data_list:
-    map_df = pd.DataFrame(map_data_list)
-    # Ensure column names are 'lat' or 'latitude', 'lon' or 'longitude'
-    # Streamlit's st.map expects columns named 'latitude'/'lat' and 'longitude'/'lon'.
-    # Our current 'latitude' and 'longitude' are fine.
-    # st.map(map_df, key="pasta_origin_map") # Old map rendering
-
-    if not map_df.empty:
-        # Define a PyDeck layer
-        layer = pdk.Layer(
-            "ScatterplotLayer",
-            data=map_df,
-            get_position=["longitude", "latitude"],
-            get_radius=10000,  # Radius in meters, adjust as needed
-            get_fill_color=[255, 182, 193, 180],  # Light pink, semi-transparent
-            pickable=True  # Enable tooltips
-        )
-
-        # Set the initial view state for the map
-        # Use the mean of lat/lon for the initial view, or a sensible default
-        initial_view_state = pdk.ViewState(
-            latitude=map_df["latitude"].mean(),
-            longitude=map_df["longitude"].mean(),
-            zoom=3, # Adjust zoom level as needed
-            pitch=30 # Adjust pitch for a slight 3D effect
-        )
-
-        # Define the tooltip content
-        tooltip = {
-            "html": "<b>{name}</b>", # Display the 'name' field from map_df in bold
-            "style": {
-                "backgroundColor": "rgba(44, 62, 80, 0.8)", # Dark background for tooltip
-                "color": "white",
-                "padding": "5px",
-                "borderRadius": "3px"
-            }
-        }
-
-        # Render the PyDeck chart
-        st.pydeck_chart(pdk.Deck(
-            layers=[layer],
-            initial_view_state=initial_view_state,
-            tooltip=tooltip,
-            map_style='mapbox://styles/mapbox/light-v9' # Optional: use a specific map style
-        ))
-    else:
-        st.write("No location data available to display on the map.")
+# Local geographic context does not need a map-provider key.
+st.header("Places in the collection")
+st.caption("Representative catalog locations, not verified birthplaces. Traditions and origin claims can cross regions.")
+with open("static/natural-earth-context.geojson") as f:
+    context = json.load(f)
+places = pd.DataFrame([{"longitude":p["longitude"],"latitude":p["latitude"],"name":p["name"]} for p in filtered_pasta if "latitude" in p and "longitude" in p])
+if not places.empty:
+    # A local, responsive SVG has a fixed geographic extent and no token/tile dependency.
+    def project(lon, lat):
+        return ((lon-6)/14*600, (math.asinh(math.tan(math.radians(48)))-math.asinh(math.tan(math.radians(lat))))*2450)
+    paths = []
+    for feature in context["features"]:
+        geometry = feature["geometry"]
+        polygons = geometry["coordinates"] if geometry["type"] == "MultiPolygon" else [geometry["coordinates"]]
+        for polygon in polygons:
+            points = [project(lon,lat) for lon,lat in polygon[0]]
+            d = "M" + " L".join(f"{x:.2f},{y:.2f}" for x,y in points) + " Z"
+            paths.append(f'<path d="{d}"/>')
+    dots = []
+    point_groups = {}
+    for _,place in places.iterrows():
+        key = (place.longitude, place.latitude)
+        point_groups.setdefault(key, []).append(place["name"])
+    for number,((lon,lat),names) in enumerate(point_groups.items(), start=1):
+        x,y = project(lon,lat)
+        dots.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="12" fill="#86452d"><title>{html.escape(", ".join(names))}</title></circle><text x="{x:.2f}" y="{y+4:.2f}" fill="#fff8e8" font-size="13" font-family="sans-serif" text-anchor="middle">{number}</text>')
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="650" viewBox="0 0 600 650" role="img" aria-label="Simplified Italy and surrounding countries, catalog locations marked as dots"><rect width="600" height="650" fill="#f7f1e4"/><g fill="#e7d8b5" stroke="#958267" stroke-width="1">' + ''.join(paths) + '</g>' + ''.join(dots) + '</svg>'
+    st.image(svg, width=600)
+    for number,((lon,lat),names) in enumerate(point_groups.items(), start=1):
+        st.markdown(f"**{number}.** {', '.join(names)}")
+    st.dataframe(places.rename(columns={"name":"Pasta","latitude":"Latitude","longitude":"Longitude"}), hide_index=True, width="stretch")
+else:
+    st.info("No matching shapes to place on the map.")
+st.caption("Map context: Natural Earth, public domain. Simplified educational geography.")
 
 st.divider() # Add a visual separator
 
 # 4. Display Nutritional Information
-st.header("General Nutritional Insights")
+st.header("A note on nutrition")
 with st.expander("View General Nutritional Insights", expanded=False): # Set expanded=False by default
     st.markdown("Here are some general notes on the nutritional aspects of pasta. Remember, the overall healthiness of a pasta dish is greatly influenced by its sauce and accompaniments!")
-    for note in nutritional_info_notes:
-        st.markdown(f"- {note}")
+    st.markdown("Ingredients, portion size and accompaniments change the nutritional profile. This catalog is not dietary advice. The inherited numeric serving claims have not been independently checked and are not presented as measured values.")
 
 st.sidebar.markdown("---")
-st.sidebar.info("🍝 Pasta Paradise Dashboard | Built with Streamlit.")
-st.sidebar.markdown("Enjoy exploring the world of pasta!")
+st.sidebar.caption("10 shapes · 5 families")

@@ -1,132 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-/* General App Styling */
-.stApp {
-    background-image: url('https://images.unsplash.com/photo-1518675219903-c682c4215a7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 2rem;
-}
-body {
-    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #5a5a5a; /* Darker, softer gray for text */
-}
-
-/* Main Title */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-h1 {
-    font-size: 3em; /* Larger, more impactful title */
-    color: #ff8c69; /* Pastel salmon color */
-    text-align: center;
-    padding-bottom: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
-    animation: fadeInDown 1s ease-in-out;
-}
-
-/* Headers */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-h2 {
-    color: #ffb6c1; /* Light pink */
-    border-bottom: 2px solid #ffb6c1;
-    padding-bottom: 10px;
-    margin-top: 30px;
-    font-weight: bold;
-    animation: fadeInUp 1s ease-in-out;
-}
-
-/* Subheaders for pasta names */
-h3 {
-    color: #ffdab9; /* Peach puff */
-    font-size: 1.75em;
-    margin-top: 20px;
-    font-weight: 500;
-}
-
-/* Sidebar Styling */
-.css-1d391kg {
-    padding: 15px;
-}
-.st-emotion-cache-10oheav {
-     font-size: 1.5em;
-     color: #add8e6; /* Light blue */
-}
-
-/* Markdown text styling */
-.stMarkdown p {
-    font-size: 1.05em;
-    color: #5a5a5a;
-}
-.stMarkdown strong {
-    color: #4a4a4a;
-}
-.stMarkdown em {
-    color: #6a6a6a;
-}
-.stMarkdown ul {
-    padding-left: 20px;
-}
-.stMarkdown li {
-    margin-bottom: 5px;
-}
-.stMarkdown code {
-    background-color: #f0e68c; /* Khaki */
-    padding: 3px 6px;
-    border-radius: 4px;
-    color: #5a5a5a;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Image styling */
-.stImage img {
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Softer, more pronounced shadow */
-}
-
-/* Divider */
-.stDivider {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.pasta-card {
-    background: linear-gradient(145deg, #fffaf0, #fdf5e6);
-    border: 1px solid #faf0e6; /* Linen */
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.pasta-card img {
-    border: 5px solid #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.pasta-card:hover {
-    transform: translateY(-5px) scale(1.03); /* More noticeable hover effect */
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-}
+/* An original specimen-cabinet direction: semolina paper, warm ink, quiet cards. */
+.stApp { background: #f7f1e4; color:#30291f; }
+[data-testid="stMainBlockContainer"] { max-width:1060px; padding-top:2.5rem; }
+h1,h2,h3 { font-family:Georgia,serif; color:#493320; letter-spacing:-.035em; }
+h1 { font-size:clamp(2.6rem,6vw,4.8rem); font-weight:400; }
+h2 { margin-top:1.4rem; font-weight:400; }
+h3 { font-size:1.7rem; font-weight:400; }
+[data-testid="stVerticalBlockBorderWrapper"] > div { border-color:#d9c9a9!important; border-radius:3px!important; }
+[data-testid="stSidebar"] { background:#ebe1ca; }
+[data-testid="stImage"] img { border-radius:0; }
+a { color:#86452d; }
+@media(max-width:600px){[data-testid="stMainBlockContainer"]{padding:1.4rem 1rem 3rem;} }
+[data-testid="stMarkdownContainer"] h1,[data-testid="stMarkdownContainer"] h2,[data-testid="stMarkdownContainer"] h3 { font-family:Georgia,'Times New Roman',serif!important; font-weight:400!important; color:#493320; }
+/* Streamlit's media fullscreen control must not overlap preceding explanation. */
+[data-testid="stImage"] { margin-top:1rem; }
+[data-testid="stMarkdownContainer"] p,[data-testid="stCaptionContainer"] { white-space:normal!important; overflow-wrap:anywhere; max-width:100%; }
+[data-testid="stElementToolbar"] { position:relative!important; inset:auto!important; }
