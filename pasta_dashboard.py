@@ -44,6 +44,7 @@ except FileNotFoundError:
 st.title("Pasta Paradise")
 st.markdown("Explore ten shapes, from long strands to filled parcels. Find a shape by name, compare its uses, then see the places associated with it.")
 st.caption("Original shape studies · a small pasta collection")
+st.caption("Recipe links open external kitchens; dishes and places are sourced catalog associations, not verified birthplaces.")
 
 # 3. Display Pasta Information
 st.sidebar.header("Filter Pasta")
@@ -123,6 +124,12 @@ if filtered_pasta:
                 st.markdown(f"**Associated place:** {pasta.get('origin', 'N/A')}")
                 st.markdown(f"**Name meaning:** _{pasta.get('translation', 'N/A')}_")
                 st.markdown(f"**At the table:** {pasta.get('common_uses', 'N/A')}")
+                dishes = pasta.get('classic_dishes') or []
+                if dishes:
+                    st.markdown(f"**Classic dishes:** {', '.join(dishes)}")
+                recipe = pasta.get('recipe') or {}
+                if recipe.get('url'):
+                    st.markdown(f"**Recipe:** [{recipe.get('dish', 'Recipe')}]({recipe['url']}) · {recipe.get('source', 'external kitchen')}")
 
         # Divider logic (remains outside the card, but after the column content)
         if col_idx % 2 == 1 or col_idx == len(filtered_pasta) -1 :

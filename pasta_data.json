@@ -3,22 +3,42 @@
         "name": "Spaghetti",
         "type": "Long",
         "description": "A long, thin, cylindrical pasta.",
-        "origin": "Sicily",
+        "origin": "Sicily (dried pasta first recorded at Trabia, near Palermo)",
         "latitude": 38.1157,
         "longitude": 13.3615,
         "translation": "Little strings",
         "common_uses": "Often served with tomato sauces, meat, or vegetables.",
+        "classic_dishes": [
+            "Spaghetti alla carbonara",
+            "Spaghetti aglio e olio",
+            "Cacio e pepe"
+        ],
+        "recipe": {
+            "dish": "Spaghetti alla carbonara",
+            "url": "https://www.lacucinaitaliana.com/italian-food/how-to-cook/how-to-make-original-carbonara",
+            "source": "La Cucina Italiana"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Spaghettoni.jpg/800px-Spaghettoni.jpg"
     },
     {
         "name": "Penne",
         "type": "Short-cut",
         "description": "Medium length tubes with ridges, cut diagonally at both ends.",
-        "origin": "Liguria",
+        "origin": "Genoa, Liguria (diagonal cut patented 1865)",
         "latitude": 44.4056,
         "longitude": 8.9463,
         "translation": "Pens (after a quill pen)",
         "common_uses": "Good with chunky sauces, in salads, or baked dishes.",
+        "classic_dishes": [
+            "Penne all'arrabbiata",
+            "Penne alla vodka",
+            "Penne ai quattro formaggi"
+        ],
+        "recipe": {
+            "dish": "Penne all'arrabbiata",
+            "url": "https://www.greatitalianchefs.com/recipes/penne-all-arrabbiata-recipe",
+            "source": "Great Italian Chefs"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Penne_rigate_primo_piano.jpg/800px-Penne_rigate_primo_piano.jpg"
     },
     {
@@ -30,17 +50,35 @@
         "longitude": 12.4964,
         "translation": "Little ribbons",
         "common_uses": "Often paired with rich and creamy sauces like Alfredo.",
+        "classic_dishes": [
+            "Fettuccine Alfredo",
+            "Fettuccine al ragù"
+        ],
+        "recipe": {
+            "dish": "Fettuccine Alfredo (original Roman recipe)",
+            "url": "https://www.saveur.com/article/recipes/the-original-fettuccine-alfredo/",
+            "source": "Saveur"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Fettuccine_bianche_e_verdi.jpg/800px-Fettuccine_bianche_e_verdi.jpg"
     },
     {
         "name": "Farfalle",
         "type": "Short-cut",
         "description": "Bow tie- or butterfly-shaped pasta.",
-        "origin": "Northern Italy",
+        "origin": "Lombardy and Emilia-Romagna (16th century)",
         "latitude": 45.4642,
-        "longitude": 9.1900,
+        "longitude": 9.19,
         "translation": "Butterflies",
         "common_uses": "Versatile for various sauces, salads, and baked dishes.",
+        "classic_dishes": [
+            "Farfalle al salmone",
+            "Farfalle primavera"
+        ],
+        "recipe": {
+            "dish": "Farfalle with smoked salmon",
+            "url": "https://www.giallozafferano.com/recipes/farfalle-with-smoked-salmon.html",
+            "source": "GialloZafferano"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Farfalle_Blue_Kitchen.jpg/800px-Farfalle_Blue_Kitchen.jpg"
     },
     {
@@ -52,6 +90,15 @@
         "longitude": 11.3426,
         "translation": "Cooking pot (possibly from Latin/Greek)",
         "common_uses": "Layered with sauces and cheese in baked dishes.",
+        "classic_dishes": [
+            "Lasagne alla bolognese",
+            "Lasagne alla napoletana"
+        ],
+        "recipe": {
+            "dish": "Lasagne verdi alla bolognese",
+            "url": "https://www.bolognawelcome.com/en/other/recipes-and-typical-products/lasagne-verdi-alla-bolognese-2",
+            "source": "Bologna Welcome"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Lasagne_-_stonesoup.jpg/800px-Lasagne_-_stonesoup.jpg"
     },
     {
@@ -63,6 +110,15 @@
         "longitude": 12.4964,
         "translation": "Possibly from 'to wrap' or 'turnip'",
         "common_uses": "Served with light butter or oil sauces, or in broth.",
+        "classic_dishes": [
+            "Spinach and ricotta ravioli with sage butter",
+            "Ravioli in broth"
+        ],
+        "recipe": {
+            "dish": "Spinach and ricotta ravioli with sage butter",
+            "url": "https://www.bbc.co.uk/food/recipes/spinach_and_ricotta_21673",
+            "source": "BBC Food"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Ravioli_di_ricotta_e_spinaci_al_burro_e_salvia_2.jpg/800px-Ravioli_di_ricotta_e_spinaci_al_burro_e_salvia_2.jpg"
     },
     {
@@ -72,19 +128,38 @@
         "origin": "Lazio",
         "latitude": 41.9028,
         "longitude": 12.4964,
-        "translation": "Hollow straws",
+        "translation": "From buco, 'hole' (pierced)",
         "common_uses": "Excellent with rich, buttery sauces or Amatriciana.",
+        "classic_dishes": [
+            "Bucatini all'Amatriciana",
+            "Bucatini alla gricia",
+            "Bucatini cacio e pepe"
+        ],
+        "recipe": {
+            "dish": "Bucatini all'Amatriciana",
+            "url": "https://www.recipesfromitaly.com/amatriciana-pasta-recipe/",
+            "source": "Recipes from Italy"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Bucatini_amatriciana.jpg/800px-Bucatini_amatriciana.jpg"
     },
     {
         "name": "Rigatoni",
         "type": "Short-cut",
         "description": "Medium-Large tube with square-cut ends, always grooved.",
-        "origin": "Lazio",
+        "origin": "Central and southern Italy",
         "latitude": 41.9028,
         "longitude": 12.4964,
         "translation": "Lined ones",
         "common_uses": "Perfect for capturing sauces in its ridges; good for baking.",
+        "classic_dishes": [
+            "Rigatoni alla Norma",
+            "Rigatoni al forno (baked)"
+        ],
+        "recipe": {
+            "dish": "Rigatoni alla Norma",
+            "url": "https://lidiasitaly.com/recipes/rigatoni-alla-norma/",
+            "source": "Lidia's Italy"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Rigatoni_con_panna_e_salsiccia.jpg/800px-Rigatoni_con_panna_e_salsiccia.jpg"
     },
     {
@@ -96,6 +171,15 @@
         "longitude": 16.8719,
         "translation": "Little ears",
         "common_uses": "Typically served with broccoli rabe or chunky vegetable sauces.",
+        "classic_dishes": [
+            "Orecchiette con le cime di rapa",
+            "Orecchiette al ragù di braciole"
+        ],
+        "recipe": {
+            "dish": "Orecchiette with broccoli rabe",
+            "url": "https://www.foodnetwork.com/recipes/geoffrey-zakarian/orecchiette-with-broccoli-rabe-12939327",
+            "source": "Food Network"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Orecchiette_con_le_cime_di_rapa.jpg/800px-Orecchiette_con_le_cime_di_rapa.jpg"
     },
     {
@@ -107,6 +191,15 @@
         "longitude": 11.2558,
         "translation": "Large reeds",
         "common_uses": "Stuffed with ricotta, spinach, or meat, and baked with sauce.",
+        "classic_dishes": [
+            "Cannelloni ricotta e spinaci (baked)",
+            "Cannelloni al ragù"
+        ],
+        "recipe": {
+            "dish": "Spinach and ricotta cannelloni",
+            "url": "https://www.recipesfromitaly.com/spinach-and-ricotta-cannelloni/",
+            "source": "Recipes from Italy"
+        },
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cannelloni_baked_with_spinach_and_ricotta.jpg/800px-Cannelloni_baked_with_spinach_and_ricotta.jpg"
     }
 ]
